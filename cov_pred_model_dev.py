@@ -1,7 +1,7 @@
 import numpy as np 
 import pandas as pd
 from tensorflow import keras
-from keras.constraints import maxnorm
+
 ndataset = np.genfromtxt('PatientData.csv', dtype=int, delimiter=',')
 
 #training data

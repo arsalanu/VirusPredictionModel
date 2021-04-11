@@ -1,6 +1,9 @@
 import numpy as np 
 import pandas as pd
+import tensorflow.compat.v1 as tf
 from tensorflow import keras
+
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
 class CovModel(keras.Model):
     def __init__(self, hidden_units):
@@ -39,7 +42,6 @@ for i in range(len(sampleresults)):
     count[0] += 1
     pred_out = [predictions[i][0],predictions[i][1],predictions[i][2]]
     actual_out = [sampleresults[i][0],sampleresults[i][1],sampleresults[i][2]]
-    print(sampledata[i], pred_out, actual_out)
     if pred_out == actual_out:
         count[1] += 1
 
